@@ -231,6 +231,9 @@ void parse_bitrate(struct nlattr *bitrate_attr, char *buf, int buflen)
 	if (rinfo[NL80211_RATE_INFO_VHT_MCS])
 		pos += snprintf(pos, buflen - (pos - buf),
 				" VHT-MCS %d", nla_get_u8(rinfo[NL80211_RATE_INFO_VHT_MCS]));
+	if (rinfo[NL80211_RATE_INFO_S1G_MCS])
+		pos += snprintf(pos, buflen - (pos - buf),
+				" S1G-MCS %d", nla_get_u8(rinfo[NL80211_RATE_INFO_S1G_MCS]));
 	if (rinfo[NL80211_RATE_INFO_40_MHZ_WIDTH])
 		pos += snprintf(pos, buflen - (pos - buf), " 40MHz");
 	if (rinfo[NL80211_RATE_INFO_80_MHZ_WIDTH])
@@ -256,6 +259,9 @@ void parse_bitrate(struct nlattr *bitrate_attr, char *buf, int buflen)
 	if (rinfo[NL80211_RATE_INFO_VHT_NSS])
 		pos += snprintf(pos, buflen - (pos - buf),
 				" VHT-NSS %d", nla_get_u8(rinfo[NL80211_RATE_INFO_VHT_NSS]));
+	if (rinfo[NL80211_RATE_INFO_S1G_NSS])
+		pos += snprintf(pos, buflen - (pos - buf),
+				" S1G-NSS %d", nla_get_u8(rinfo[NL80211_RATE_INFO_S1G_NSS]));
 	if (rinfo[NL80211_RATE_INFO_HE_MCS])
 		pos += snprintf(pos, buflen - (pos - buf),
 				" HE-MCS %d", nla_get_u8(rinfo[NL80211_RATE_INFO_HE_MCS]));
